@@ -19,8 +19,7 @@ import org.springframework.stereotype.Service;
 public class ECSLoggingInInterceptor extends LoggingInInterceptor {
 
     /** The xml logging enabled. */
-    @Value("${cxf.logging.enabled}")
-    private boolean xmlLoggingEnabled;
+    private boolean xmlLoggingEnabled=true;
 
     /**
      * Constructor ECSLoggingInInterceptor.

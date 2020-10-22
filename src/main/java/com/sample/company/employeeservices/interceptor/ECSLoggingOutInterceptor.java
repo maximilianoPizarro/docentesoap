@@ -19,8 +19,7 @@ import org.springframework.stereotype.Service;
 public class ECSLoggingOutInterceptor extends LoggingOutInterceptor {
 
     /** The xml logging enabled. */
-    @Value("${cxf.logging.enabled}")
-    private boolean xmlLoggingEnabled;
+    private boolean xmlLoggingEnabled=true;
 
     /**
      * Constructor ECSLoggingInInterceptor.
