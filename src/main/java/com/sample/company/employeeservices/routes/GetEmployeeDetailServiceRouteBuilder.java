@@ -8,14 +8,11 @@ import org.springframework.stereotype.Service;
  * The Class GetEmployeeDetailServiceRouteBuilder.
  */
 @Service
-@DependsOn("SSLConfiguration")
 public class GetEmployeeDetailServiceRouteBuilder extends EmployeeServicesGenericRouteBuilder {
 
-    @Value("${services.getemployeedetail.jms.enabled}")
-    private boolean getEmployeeDetailJMSEnabled;
-
-    @Value("${services.getemployee.http.enabled}")
-    private boolean getEmployeeDetailHttpEnabled;
+    private boolean getEmployeeDetailJMSEnabled=true;
+    
+    private boolean getEmployeeDetailHttpEnabled=true;
 
     /*
      * (non-Javadoc)
