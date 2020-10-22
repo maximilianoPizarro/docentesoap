@@ -17,7 +17,7 @@
     serviceClass="com.sample.company.employeeservice.getemployeedetailservice.getemployeedetail.GetEmployeeDetailPortType"
     xmlns:a="http://com/sample/company/employeeservice/getemployeedetailservice/GetEmployeeDetail/">
     <cxf:properties>
-      <entry key="schema-validation-enabled" value="${schema.validation.enabled}" />
+      <entry key="schema-validation-enabled" value="true" />
     </cxf:properties>
     <cxf:inInterceptors>
       <ref bean="ecsLoggingInInterceptor" />
@@ -41,7 +41,7 @@
          p:jmsConfig-ref="getEmployeeDetailJMSConfig" />
     </cxf:features>
     <cxf:properties>
-      <entry key="schema-validation-enabled" value="${schema.validation.enabled}" />
+      <entry key="schema-validation-enabled" value="true" />
     </cxf:properties>
     <cxf:inInterceptors>
       <ref bean="ecsLoggingInInterceptor" />
@@ -52,7 +52,7 @@
   </cxf:cxfEndpoint>
   
   <bean id="getEmployeeDetailJMSConfig" class="org.apache.cxf.transport.jms.JMSConfiguration" 
-    p:sessionTransacted="false" p:connectionFactory-ref="jmsConnectionFactory0" p:concurrentConsumers="${wmq.getEmployeeDetail.concurrentconsumers}"
-    p:targetDestination="${queues.getEmployeeDetail}" p:deliveryMode="1" p:timeToLive="${message.timeToLive}" p:explicitQosEnabled="${message.explicitQosEnabled}"/>
+    p:sessionTransacted="false" p:connectionFactory-ref="jmsConnectionFactory0" p:concurrentConsumers="2"
+    p:targetDestination="" p:deliveryMode="1" p:timeToLive="900000" p:explicitQosEnabled="true"/>
 
 </beans>

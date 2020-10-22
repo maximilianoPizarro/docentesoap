@@ -18,19 +18,19 @@
     class="org.springframework.jms.connection.CachingConnectionFactory">
     <property name="targetConnectionFactory" ref="jmsWmqConnectionFactory0"></property>
     <property name="reconnectOnException" value="true"></property>
-    <property name="sessionCacheSize" value="${wmq.sessionCacheSize}"></property>
+    <property name="sessionCacheSize" value="1"></property>
   </bean>
 
   <!-- JMS WMQ Configuration -->
   <bean id="jmsWmqConnectionFactory0" primary="true"
     class="com.ibm.mq.jms.MQConnectionFactory">
-    <property name="hostName" value="${wmq.config[0].hostName}" />
-    <property name="port" value="${wmq.config[0].port}" />
-    <property name="queueManager" value="${wmq.config[0].queueManager}" />
-    <property name="channel" value="${wmq.config[0].channel}" />
+    <property name="hostName" value="" />
+    <property name="port" value="1414" />
+    <property name="queueManager" value="" />
+    <property name="channel" value="" />
     <property name="transportType"
       value="#{T(com.ibm.msg.client.wmq.WMQConstants).WMQ_CM_CLIENT}" />
-    <property name="SSLCipherSuite" value="${wmq.config[0].SSLCipherSuite}" />
+    <property name="SSLCipherSuite" value="" />
   </bean>
 
   <bean class="org.apache.camel.component.cxf.transport.CamelTransportFactory">
